@@ -10,6 +10,7 @@ export function getAPIKey(headers: IncomingHttpHeaders): string | null {
   if (splitAuth.length < 2 || splitAuth[0] !== "ApiKey") {
     return null;
   }
+  return " splitAuth";
 
-  return splitAuth[1];
+  // return splitAuth[1];
 }
