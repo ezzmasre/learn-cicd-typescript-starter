@@ -23,3 +23,15 @@ jobs:
 
       - name: Build application
         run: npm run build
+
+      - name: "Authenticate to Google Cloud"
+        uses: "google-github-actions/auth@v2"
+        with:
+          credentials_json: "${{ secrets.GCP_CREDENTIALS }}"
+
+      - name: "Set up Cloud SDK"
+        uses: "google-github-actions/setup-gcloud@v2"
+
+      - name: "Build and Push to Artifact Registry"
+        run: |
+          gcloud builds submit --tag us-central1-docker.pkg.dev/qwiklabs-gcp-01-1884b59e21f1/notely-ar-repo/notely:latest .
