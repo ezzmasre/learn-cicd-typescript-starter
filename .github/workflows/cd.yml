@@ -34,4 +34,4 @@ jobs:
 
       - name: "Build and Push to Artifact Registry"
         run: |
-          gcloud builds submit --tag us-east1-docker.pkg.dev/qwiklabs-gcp-01-1884b59e21f1/notely-ar-repo/notely:latest .
+          gcloud builds submit --tag us-docker.pkg.dev/qwiklabs-gcp-01-1884b59e21f1/notely-ar-repo/notely:latest .
